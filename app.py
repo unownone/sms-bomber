@@ -1,4 +1,3 @@
-from main import bomber
 from flask import Flask,render_template,redirect,url_for,request
 from config import Config
 from flask_pymongo import PyMongo
@@ -44,6 +43,7 @@ def home():
             else:
                 block = blocked.find_one({"number":data["number"]})
             if block is None:
+                from main import bomber
                 Thread(target=bomber(data['number'],data['freq'],data['interval']),args=(data['number'],int(data['freq']),int(data['interval'],)))
                 return url_for('/',res='BOMBING STARTED SUCCESSFULLY')
             else:
