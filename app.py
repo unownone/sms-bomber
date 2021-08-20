@@ -16,6 +16,9 @@ logging = mongo.db.logging
 
 @app.route('/',methods=['GET','POST'])
 def home(self):
+    datea = logging.find_one({"info":"total views"})
+    self.visited = datea["total_views"]
+    self.unique = len(datea["ips"])
     if request.method=='GET':
         data=request.args.to_dict()
         if 'res' not in data:
@@ -50,9 +53,6 @@ def home(self):
                 thread.start()
                 datea = request.headers['X-Forwarded-For']
                 logg = logging.find_one_and_update({"info":"total views"},{{"$inc":{"total_views":1}},{"$push": {"ips":datea}}})
-                datea = logging.find_one({"info":"total views"})
-                self.visited = datea["total_views"]
-                self.unique = len(datea["ips"])
                 return redirect(url_for('home',res='BOMBING STARTED SUCCESSFULLY',visits=self.visited,uniq=self.unique))
             else:
                 return redirect(url_for('home',res='NUMBER CANNOT BE BOMBED',visits=self.visited,uniq=self.unique))
