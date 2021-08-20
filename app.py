@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for,request,jsonify
+from flask import Flask,render_template,url_for,request
 from config import Config
 from flask_pymongo import PyMongo
 from threading import Thread
@@ -44,7 +44,7 @@ def home():
                 block = blocked.find_one({"number":data["number"]})
             if block is None:
                 from main import bomber
-                thread = Thread(target=bomber(),args=(data['number'],int(data['freq']),int(data['interval']),))
+                thread = Thread(target=bomber,args=(data['number'],int(data['freq']),int(data['interval'])))
                 thread.start()
                 return url_for('home',res='BOMBING STARTED SUCCESSFULLY')
             else:

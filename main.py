@@ -3,7 +3,7 @@ from drivers import flipkart,netmeds,abhibus,amazon,oyorooms,uber,wynk,tinder,le
 
 # set the frequency of sms which is approx maximum to 10 per 24 days
 
-def bomber(mob,frequency,n=5):
+def bomber(mob,frequency,n = 5):
     act=0
     while act<frequency:
         try:
