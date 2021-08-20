@@ -9,8 +9,8 @@
 </head>
 <body>
     <h1>B-2 SMS BOMBER</h1>
-    <form action='{{url_for('home')}}',method='post'>
     <p {{visib}}>OUTPUT : {{res}}</p>
+    <form action="{{url_for('home')}}",method="post">
     <label for="number">Number (+91):</label>
     <input type="text" id="number" name="number">
     <label for="freq">Number of Messages:</label>
