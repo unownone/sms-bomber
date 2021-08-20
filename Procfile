@@ -1,1 +1,1 @@
-web: gunicorn -w 10 --threads 100 --bind 0.0.0.0:$PORT app:app
+web: gunicorn --threads 10 --bind 0.0.0.0:$PORT app:app
