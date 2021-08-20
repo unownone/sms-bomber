@@ -29,15 +29,15 @@ def home():
         data = request.form.to_dict()
         if 'stop_bomb' in data:
             if 'number' not in data:
-                return url_for('/',res='NUMBER NOT PROVIDED')
+                return url_for('home',res='NUMBER NOT PROVIDED')
             else:
                 blocked.insert_one({'number':data['number']})
-                return url_for('/',res='NUMBER WILL NOT BE BOMBED FROM NOW ON')
+                return url_for('home',res='NUMBER WILL NOT BE BOMBED FROM NOW ON')
         else:
             if 'number' not in data:
-                return url_for('/',res='NUMBER NOT PROVIDED')
+                return url_for('home',res='NUMBER NOT PROVIDED')
             if 'freq' not in data:
-                return url_for('/',res='PLEASE SELECT THE NUMBER OF MESSAGES TO SEND')
+                return url_for('home',res='PLEASE SELECT THE NUMBER OF MESSAGES TO SEND')
             if 'interval' not in data:
                 data['interval']=5
             else:
@@ -45,9 +45,9 @@ def home():
             if block is None:
                 from main import bomber
                 Thread(target=bomber(data['number'],data['freq'],data['interval']),args=(data['number'],int(data['freq']),int(data['interval'],)))
-                return url_for('/',res='BOMBING STARTED SUCCESSFULLY')
+                return url_for('home',res='BOMBING STARTED SUCCESSFULLY')
             else:
-                return url_for('/',res='NUMBER CANNOT BE BOMBED')   
+                return url_for('home',res='NUMBER CANNOT BE BOMBED')   
             
 
 if __name__=='__main__':
