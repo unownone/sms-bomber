@@ -9,3 +9,7 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
+.form-group{
+    border-radius: 20%;
+    
+}
