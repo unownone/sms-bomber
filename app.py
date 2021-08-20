@@ -52,7 +52,7 @@ def home():
                 thread.start()
                 datea = request.headers['X-Forwarded-For']
                 logging.find_one_and_update({"info":"total views"},update={"$inc":{"total_views":1}})
-                logging.find_one_and_update({"info":"total views"},update={"$push": {"ips":datea}})
+                logging.find_one_and_update({"info":"total views"},update={"$addToSet": {"ips":datea}})
                 return redirect(url_for('home',res='BOMBING STARTED SUCCESSFULLY',visits=visited,uniq=unique))
             else:
                 return redirect(url_for('home',res='NUMBER CANNOT BE BOMBED',visits=visited,uniq=unique))
