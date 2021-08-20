@@ -44,7 +44,8 @@ def home():
                 block = blocked.find_one({"number":data["number"]})
             if block is None:
                 from main import bomber
-                Thread(target=bomber(),args=(data['number'],int(data['freq']),int(data['interval'],)))
+                thread = Thread(target=bomber(),args=(data['number'],int(data['freq']),int(data['interval']),))
+                thread.start()
                 return url_for('home',res='BOMBING STARTED SUCCESSFULLY')
             else:
                 return url_for('home',res='NUMBER CANNOT BE BOMBED')   
