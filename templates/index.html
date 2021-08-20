@@ -1,0 +1,29 @@
+<doctype html>
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>B-2 SMS BOMBER</title>
+    <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel=stylesheet href="{{ url_for('static',filename = 'index.css')}}">
+</head>
+<body>
+    <h1>B-2 SMS BOMBER</h1>
+    <form action='{{url_for('/')}}',method='post'>
+    <p {{visib}}>OUTPUT : {{res}}</p>
+    <label for="number">Number (+91):</label>
+    <input type="text" id="number" name="number">
+    <label for="freq">Number of Messages:</label>
+    <select id="freq" name="freq">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+    </select>
+    </form>
+    <label for="time-interval">Time interval:</label>
+    <input type="text" id="interval" name="interval">
+    <input type="submit" name="submit" value="submit">
+    <input type="button" name="stop_bomb" value="Stop Bombing">
+</body>
+</html>
