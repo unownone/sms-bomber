@@ -10,9 +10,12 @@
 <body>
     <h1>B-2 SMS BOMBER</h1>
     <p {{visib}}>OUTPUT : {{res}}</p>
-    <form action="{{url_for('home')}}" method="post">
+    <form class="form" action="{{url_for('home')}}" method="post">
+    <div class="form-group">
     <label for="number">Number (+91):</label>
     <input type="text" id="number" name="number">
+    </div>
+    <div class="form-group">
     <label for="freq">Number of Messages:</label>
     <select id="freq" name="freq">
         <option value="5">5</option>
@@ -20,8 +23,11 @@
         <option value="25">25</option>
         <option value="50">50</option>
     </select>
+    </div>
+    <div class="form-group">
     <label for="time-interval">Time interval:</label>
     <input type="text" id="interval" name="interval">
+    </div>
     <input type="submit" name="submit" value="Submit">
     <input type="submit" name="stop_bomb" value="Stop Bombing">
     </form>

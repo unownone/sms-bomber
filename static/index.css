@@ -3,3 +3,9 @@ body{
     text-align: center;
     color: white;
 }
+
+.form{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
