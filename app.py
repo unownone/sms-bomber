@@ -1,4 +1,4 @@
-from flask import Flask,render_template,url_for,request
+from flask import Flask,render_template,url_for,request,redirect
 from config import Config
 from flask_pymongo import PyMongo
 from threading import Thread
@@ -29,15 +29,15 @@ def home():
         data = request.form.to_dict()
         if 'stop_bomb' in data:
             if 'number' not in data:
-                return url_for('home',res='NUMBER NOT PROVIDED')
+                return redirect(url_for('home',res='NUMBER NOT PROVIDED'))
             else:
                 blocked.insert_one({'number':data['number']})
-                return url_for('home',res='NUMBER WILL NOT BE BOMBED FROM NOW ON')
+                return redirect(url_for('home',res='NUMBER WILL NOT BE BOMBED FROM NOW ON'))
         else:
             if data['number']=="":
-                return url_for('home',res='NUMBER NOT PROVIDED')
+                return redirect(url_for('home',res='NUMBER NOT PROVIDED'))
             if data['freq']=="":
-                return url_for('home',res='PLEASE SELECT THE NUMBER OF MESSAGES TO SEND')
+                return redirect(url_for('home',res='PLEASE SELECT THE NUMBER OF MESSAGES TO SEND'))
             if 'interval'=="":
                 data['interval']=5
             else:
@@ -46,9 +46,9 @@ def home():
                 from main import bomber
                 thread = Thread(target=bomber,args=(data['number'],int(data['freq']),int(data['interval'])))
                 thread.start()
-                return url_for('home',res='BOMBING STARTED SUCCESSFULLY')
+                return redirect(url_for('home',res='BOMBING STARTED SUCCESSFULLY'))
             else:
-                return url_for('home',res='NUMBER CANNOT BE BOMBED')   
+                return redirect(url_for('home',res='NUMBER CANNOT BE BOMBED'))
             
 
 if __name__=='__main__':
