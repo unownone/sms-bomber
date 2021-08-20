@@ -48,3 +48,7 @@ def home():
                 return url_for('/',res='BOMBING STARTED SUCCESSFULLY')
             else:
                 return url_for('/',res='NUMBER CANNOT BE BOMBED')   
+            
+
+if __name__=='__main__':
+    app.run(debug=False)
