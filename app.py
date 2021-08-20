@@ -1,4 +1,4 @@
-from flask import Flask,render_template,redirect,url_for,request
+from flask import Flask,render_template,url_for,request,jsonify
 from config import Config
 from flask_pymongo import PyMongo
 from threading import Thread
@@ -27,6 +27,7 @@ def home():
         return render_template('index.html',visib=visib,res=res)
     elif request.method=='POST':
         data = request.form.to_dict()
+        return jsonify(data)
         if 'stop_bomb' in data:
             if 'number' not in data:
                 return url_for('home',res='NUMBER NOT PROVIDED')
