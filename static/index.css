@@ -20,9 +20,10 @@ footer{
 
   #Button {
     transition-duration: 0.4s;
+    color: #4CAF50;
   }
   
     #Button .hover {
     background-color: #4CAF50; /* Green */
-    color: white;
+    color: black;
   }
