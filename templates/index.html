@@ -14,7 +14,7 @@
 <body>
     <h1>B-2 SMS BOMBER</h1>
     <p {{visib}}>OUTPUT : {{res}}</p>
-    <form class="form" action="{{url_for('home')}}" method="post">
+    <form class="form" id="centered" action="{{url_for('home')}}" method="post">
     <div class="form-group">
     <label for="number">Number (+91):</label>
     <input type="text" id="number" name="number">
@@ -40,7 +40,7 @@
         <h2>What is it?</h2>
         <p>This is a very simple sms bomber to prank your friends. You just input the number of messages and number to bomb them.</p>
         <h2>How to use:</h2>
-        <ul>
+        <ul id="centered">
             <li>Enter the number (indian only) in the number section without +91 </li>
             <li>Select the number of messages</li>
             <li>Select the time interval ie after which each message will be sent. <br> By default each messages are sent with a 5 second gap.</li>
