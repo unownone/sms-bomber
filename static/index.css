@@ -16,3 +16,13 @@ body{
 footer{
     text-align: center;
   }
+
+
+  #Button {
+    transition-duration: 0.4s;
+  }
+  
+    #Button .hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
