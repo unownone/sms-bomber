@@ -20,7 +20,7 @@ body{
 }
 
 .text-info{
-  display:flexbox;
+  display:flex;
 }
 
 #Button{
