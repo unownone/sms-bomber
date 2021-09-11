@@ -12,6 +12,7 @@ body{
 
 #centered{
     display: block;
+    color:#4CAF50;
     margin-left: auto;
     margin-right: auto;
 }
