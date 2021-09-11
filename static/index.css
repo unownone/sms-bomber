@@ -36,6 +36,7 @@ body{
   }
 
 input[type="text"]{
+  margin-top:5%;
   border-radius: 5;
     background-color :#3E413D; 
     color:white;
