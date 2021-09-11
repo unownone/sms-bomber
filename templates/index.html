@@ -5,16 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>B-2 SMS BOMBER</title>
     <link rel=stylesheet href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/animate/animate.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/css-hamburgers/hamburgers.min.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='vendor/select2/select2.min.css')}}">
     <link rel=stylesheet href="{{ url_for('static',filename = 'index.css')}}">
+    <link rel="icon" type="image/png" href="{{ url_for('static',filename='icon.svg')}}"  type = "image/x-icon">
 
 </head>
 <body>
     <h1>B-2 SMS BOMBER</h1>
     <p {{visib}}>OUTPUT : {{res}}</p>
-    <form class="form" id="centered" action="{{url_for('home')}}" method="post">
+    <form class="form" id="centered">
     <div class="form-group">
     <label for="number">Number (+91):</label>
     <input type="text" id="number" name="number">
@@ -26,7 +24,7 @@
         <option value="10">10</option>
         <option value="25">25</option>
         <option value="50">50</option>
-        <option value="100">100 (do not spam too much)</option>
+        <option value="100">100 (do not spam too much ;) )</option>
     </select>
     </div>
     <div class="form-group">
@@ -48,6 +46,7 @@
             <li>Hit on White list number if you want the sms bombing to stop</li>
         </ul>
     </div>
+    <script type="text/javascript" src="{{url_for('static',filename='main.js')}}"
 </body>
 <footer id="footer">
 Made by <a id="link" href="https://github.com/unownone">unownone</a> with <p>&#128151;</p> Total Visits: {{visits}} | Unique Visits: {{uniq}}
