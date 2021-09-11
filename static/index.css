@@ -1,7 +1,13 @@
+@font-face {
+  font-family: zcool;
+  src: url(ZCOOLKuaiLe-Regular.ttf);
+}
+
 body{
-    background-color: black;
+    background-color:#3E413D;
     text-align: center;
     color: white;
+    font-family:zcool;
 }
 
 #centered{
