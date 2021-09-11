@@ -38,7 +38,9 @@ input[type="text"]{
     background-color :#3E413D; 
     color:white;
   }
-footer {
+#footer {
+  background-color :#3E413D; 
+  color:azure;
   text-align: center;
   position:absolute;
   bottom:0;
@@ -47,23 +49,25 @@ footer {
  }
 
  #number{
-   border:1px solid white;
+   border:2px solid white;
  }
  #number :focus{
-  border:1px solid #4CAF50;
+  border:2px solid #4CAF50;
  }
 
  #freq{
+   background-color:#3E413D;
+   color:white;
    size:inherit;
-  border:1px solid white;
+  border:2px solid white;
 }
 #freq :focus{
- border:1px solid #4CAF50;
+ border:2px solid #4CAF50;
 }
 
 #interval{
-  border:1px solid white;
+  border:2px solid white;
 }
 #interval :focus{
- border:1px solid #4CAF50;
+ border:2px solid #4CAF50;
 }
