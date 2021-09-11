@@ -24,15 +24,9 @@ body{
 }
 
 #Button{
-  padding:10%;
   background-color: black;
   color: white;
   border: 2px solid #4CAF50;
-  transition-duration: 0.4s;
-  }
-#Button :hover {
-    background-color: #4CAF50; /* Green */
-    color: black;
   }
 
 input[type="text"]{
