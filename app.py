@@ -28,8 +28,7 @@ def home():
         else:
             visib=''
             res=data['res']
-        return render_template('Welcome to Google Search Console.html')
-        #return render_template('index.html',visib=visib,res=res,visits=visited,uniq=unique)
+        return render_template('index.html',visib=visib,res=res,visits=visited,uniq=unique)
     elif request.method=='POST':
         data = request.form.to_dict()
         if 'stop_bomb' in data:
