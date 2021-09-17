@@ -4,6 +4,9 @@ from flask_pymongo import PyMongo
 from threading import Thread
 
 
+################################
+#########DEVELOPED BY UNOWNONE##
+
 app = Flask(__name__)
 
 app.config.from_object(Config)
