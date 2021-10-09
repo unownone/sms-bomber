@@ -35,7 +35,7 @@ def home():
     elif request.method=='POST':
         data = request.form.to_dict()
         if 'stop_bomb' in data:
-            if 'number' not in data:
+            if data['number']:
                 return redirect(url_for('home',res='NUMBER NOT PROVIDED',visits=visited,uniq=unique))
             else:
                 blocked.insert_one({'number':data['number']})
