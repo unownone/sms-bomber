@@ -35,9 +35,12 @@ def home():
     elif request.method=='POST':
         data = request.form.to_dict()
         if 'stop_bomb' in data:
-            if data['number']:
+            if data['number']=="":
                 return redirect(url_for('home',res='NUMBER NOT PROVIDED',visits=visited,uniq=unique))
             else:
+                search = blocked.find_one({'number':data['number']})
+                if search is not None:
+                    return redirect(url_for('home',res='NUMBER ALREADY IN DATABASE',visits=visited,uniq=unique))
                 blocked.insert_one({'number':data['number']})
                 return redirect(url_for('home',res='NUMBER WILL NOT BE BOMBED FROM NOW ON',visits=visited,uniq=unique))
         else:
