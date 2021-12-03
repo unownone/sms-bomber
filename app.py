@@ -2,8 +2,7 @@ from flask import Flask,render_template,url_for,request,redirect
 from config import Config
 from flask_pymongo import PyMongo
 from threading import Thread
-
-
+from main import bomber
 ################################
 #########DEVELOPED BY UNOWNONE##
 
@@ -53,7 +52,6 @@ def home():
             else:
                 block = blocked.find_one({"number":data["number"]})
             if block is None:
-                from main import bomber
                 thread = Thread(target=bomber,args=(data['number'],int(data['freq']),int(data['interval'])))
                 thread.start()
                 datea = request.headers['X-Forwarded-For']
