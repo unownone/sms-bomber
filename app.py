@@ -47,7 +47,7 @@ def home():
                 return redirect(url_for('home',res='NUMBER NOT PROVIDED',visits=visited,uniq=unique))
             if data['freq']=="":
                 return redirect(url_for('home',res='PLEASE SELECT THE NUMBER OF MESSAGES TO SEND',visits=visited,uniq=unique))
-            if 'interval'=="":
+            if data['interval']=="":
                 data['interval']=5
             else:
                 block = blocked.find_one({"number":data["number"]})
