@@ -49,8 +49,7 @@ def home():
                 return redirect(url_for('home',res='PLEASE SELECT THE NUMBER OF MESSAGES TO SEND',visits=visited,uniq=unique))
             if data['interval']=="":
                 data['interval']=5
-            else:
-                block = blocked.find_one({"number":data["number"]})
+            block = blocked.find_one({"number":data["number"]})
             if block is None:
                 thread = Thread(target=bomber,args=(data['number'],int(data['freq']),int(data['interval'])))
                 thread.start()
